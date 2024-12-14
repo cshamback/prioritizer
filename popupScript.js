@@ -1,5 +1,3 @@
-let items = []; // dynamically sized array of strings to hold to-do list items 
-
 // PAGE CONTENT ---------
 
 // make sure button is fully loaded before the onclick method is added 

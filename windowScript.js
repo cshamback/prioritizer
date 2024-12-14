@@ -1,6 +1,7 @@
 // PURPOSE: handle all interactivity and other stuff in the large popup window 
 // this includes creating and handling list items, calling Subjective Sort to shuffle them, and showing results as a checklist 
 
+let items = []; // dynamically sized array of strings to hold to-do list items 
 let windowOpened = false;
 
 console.log("WindowScript.js has been called!!");
@@ -21,22 +22,50 @@ itemTemplate.innerHTML = `
     </div>
 `;
 
-// called when the user presses "enter" or otherwise finishes inputting text
-function addItem() {
-    console.log("Added an item to the list.");
-    newTextBox();
+// called when the user presses "enter" or otherwise finishes inputting text 
+// adds a FINISHED to-do list item (itemTemplate) to the list 
+function addItem(inputElement) {
+    // convert this input to an itemTemplate (finished item)
+
+    let itemText = inputElement.value;
+
+    // get div to append to 
+    const listDiv = document.getElementById("todoListContainer");
+
+    // create a clone of the template, THEN append it (preserves structure)
+    const clone = itemTemplate.content.cloneNode(true);
+    clone.firstElementChild.textContent = itemText;
+    listDiv.appendChild(clone);
+
+    // get text from input, append to items
+    items.push(itemText)
+
+    // clear input box 
+    inputElement.value = "";
 }
 
-// called after addItem -> creates a new textbox below the finished one
+// called after addItem -> creates a new textbox (InputTemplate) below the finished ones
 // also called once when the popup opens 
 function newTextBox() {
-    console.log("Add a new text box.");
+
+    // get div to append to 
+    const listDiv = document.getElementById("newItemsContainer");
 
     // create a clone of the template, THEN append it (preserves structure)
     const clone = inputTemplate.content.cloneNode(true);
-    document.body.appendChild(clone);
 
-    console.log("Appended new text box: ", clone);
+    // add event listener for ENTER key
+    const inputBox = clone.firstElementChild.querySelector("input");
+    inputBox.addEventListener("keydown", function (e) {
+        if (e.code === "Enter") {
+            addItem(inputBox);
+        }
+    });
+    listDiv.appendChild(clone);
+}
+
+function doneButton() {
+    console.log(items);
 }
 
 // document.addEventListener applies to things that happen within the HTML document (window.html)
@@ -45,10 +74,14 @@ function newTextBox() {
 // handle everything that happens immediately after the window opens, only once 
 window.addEventListener('load', function () {
     if (!windowOpened) {
-        console.log("Window has been opened. This will not happen again.");
         newTextBox();
         windowOpened = true;
-    } else {
-        console.log("Load has triggered but windowOpened is false.");
     }
+});
+
+// make sure button is fully loaded before the onclick method is added 
+document.addEventListener("DOMContentLoaded", () => {
+
+    // set all onclick methods 
+    document.getElementById("doneButton").onclick = doneButton;
 });
