@@ -5,18 +5,32 @@
 </head>
 
 <body>
-    <h1>Create a new list.</h1>
-    <p>Add as many items as you need to.</p>
+    <div id="listCreation">
+        <h1>Create a new list.</h1>
+        <p>Add as many items as you need to.</p>
 
-    <!-- Contents added at runtime -->
-    <div id="todoListContainer"></div> <!-- contains finished items -->
-    <div id="newItemsContainer"></div> <!-- contains input boxes -->
+        <!-- Contents added at runtime -->
+        <div id="todoListContainer"></div> <!-- contains finished items -->
+        <div id="newItemsContainer"></div> <!-- contains input boxes -->
 
-    <div>
-        <button id="doneButton">Done</button>
+        <div>
+            <button id="doneButton">Done</button>
+        </div>
+        <p>(Don't worry, you can add more later.)</p>
     </div>
-    <p>(Don't worry, you can add more later.)</p>
 
+    <div id="sorting">
+        <h1>For each pair, choose the item that is higher priority.</h1>
+        <button class="sortOption" id="left">Option 1</button>
+        <button class="sortOption" id="right">Option 2</button>
+    </div>
+
+    <div id="finalList">
+        <h1>To-do</h1>
+        <div id="todoList"></div>
+    </div>
+
+    <script src="sort.js"></script>
     <script src="windowScript.js"></script>
 </body>
 

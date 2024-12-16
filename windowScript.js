@@ -4,6 +4,11 @@
 let items = []; // dynamically sized array of strings to hold to-do list items 
 let windowOpened = false;
 
+// divs containing elements of different pages 
+let listCreation;
+let sorting;
+let finalList;
+
 console.log("WindowScript.js has been called!!");
 
 // TEMPLATES ---------
@@ -64,8 +69,36 @@ function newTextBox() {
     listDiv.appendChild(clone);
 }
 
-function doneButton() {
+async function doneButton() { // triggers the sort and the results page 
     console.log(items);
+
+    listCreation.style.display = "none";
+    sorting.style.display = "block";
+
+    sortedList = await mergeInsertionSort(items);
+    console.log(sortedList);
+
+    // display the sorted list 
+    sorting.style.display = "none";
+    finalList.style.display = "block";
+
+    populateList(sortedList);
+}
+
+function populateList(list) {
+    console.log("populateList triggered! List used: " + list);
+
+    for (let i = 0; i < list.length; i++) {
+        // get div to append to 
+        const listDiv = document.getElementById("todoList");
+
+        // create a clone of the template, set its text content, THEN append it (preserves structure)
+        const clone = itemTemplate.content.cloneNode(true);
+        const textBox = clone.firstElementChild.querySelector("p");
+        textBox.textContent = list[i];
+
+        listDiv.appendChild(clone);
+    }
 }
 
 // document.addEventListener applies to things that happen within the HTML document (window.html)
@@ -74,6 +107,15 @@ function doneButton() {
 // handle everything that happens immediately after the window opens, only once 
 window.addEventListener('load', function () {
     if (!windowOpened) {
+        // hide all HTML except listCreation div 
+        listCreation = document.getElementById("listCreation");
+        sorting = document.getElementById("sorting");
+        finalList = document.getElementById("finalList");
+
+        listCreation.style.display = "block";
+        sorting.style.display = "none";
+        finalList.style.display = "none";
+
         newTextBox();
         windowOpened = true;
     }
