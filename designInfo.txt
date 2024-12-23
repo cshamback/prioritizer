@@ -1,0 +1,14 @@
+### Colors 
+Background: F9E4E2
+Text color: 000000 (regular), FFFFFF (finished item)
+
+Text/button background: F3CACA
+New item text background: ECD0D0 (black border)
+Finished item background: C9A6A6
+Checkbox background: B5B5B5
+
+Decorative stripe/box color: EDD5D5
+
+### Fonts
+Jomolhari - serif (headings/large text)
+Jaldi - sans-serif (main text)

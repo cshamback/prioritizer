@@ -1,8 +1,48 @@
+.jaldi-regular {
+    font-family: "Jaldi", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.ibarra-real-nova {
+    font-family: "Ibarra Real Nova", serif;
+    font-optical-sizing: auto;
+    font-weight: 550;
+    font-style: normal;
+}
+
+:is(h1, h2, h3) {
+    font-family: "Ibarra Real Nova", serif;
+}
+
+body {
+    size: auto;
+    border-radius: 25px;
+    background-color: #F9E4E2;
+}
+
+p {
+    font-family: "Jaldi", sans-serif;
+}
+
+h1 {
+    font-size: 32px;
+}
+
+button {
+    background-color: #F3CACA;
+    border: none;
+    border-radius: 10px;
+    font-family: "Jaldi", sans-serif;
+    padding: 5px;
+}
+
 input {
     border: 1px solid black;
     padding: 5px;
     width: 90%;
     margin-bottom: 10px;
+    text-wrap: wrap;
 }
 
 .sortOption {
@@ -12,5 +52,31 @@ input {
     margin-left: 10px;
     margin-top: 10px;
     padding: 5px;
+
     border: 2px solid black;
+    background-color: #F3CACA;
+
+    text-wrap: wrap;
+}
+
+/* TODO: 
+- wrap text
+- add spacing between items 
+*/
+.listItem {
+    background-color: pink;
+    border-radius: 10px;
+    padding: 10px;
+    text-wrap: wrap;
+}
+
+.inputBox {
+    text-wrap: wrap;
+}
+
+.startButtons {
+    display: block;
+    margin: 0 auto 10;
+    padding: 10px;
+    width: 90%;
 }

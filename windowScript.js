@@ -9,8 +9,6 @@ let listCreation;
 let sorting;
 let finalList;
 
-console.log("WindowScript.js has been called!!");
-
 // TEMPLATES ---------
 
 const inputTemplate = document.createElement("template"); // string input must be a type of HTML element ie. template, div, p
@@ -21,9 +19,11 @@ inputTemplate.innerHTML = `
 `;
 
 const itemTemplate = document.createElement("template");
+// checkbox needs a name and label needs a 'for', both must be same value 
 itemTemplate.innerHTML = `
-    <div class id="textBox">
-        <p>This is a finished to-do list item.</p>
+    <div class="listItem" id="textBox">
+    <label> This is a finished to-do list item.</label>
+        <input type="checkbox"> 
     </div>
 `;
 
@@ -69,6 +69,7 @@ function newTextBox() {
     listDiv.appendChild(clone);
 }
 
+//TODO: add a "re-sort" button that calls this method 
 async function doneButton() { // triggers the sort and the results page 
     console.log(items);
 
@@ -92,11 +93,17 @@ function populateList(list) {
         // get div to append to 
         const listDiv = document.getElementById("todoList");
 
-        // create a clone of the template, set its text content, THEN append it (preserves structure)
+        // create a clone of the template and set its properties
         const clone = itemTemplate.content.cloneNode(true);
-        const textBox = clone.firstElementChild.querySelector("p");
-        textBox.textContent = list[i];
 
+        const checkBox = clone.firstElementChild.querySelector("input");
+        const textBox = clone.childNodes[1].querySelector("label");
+
+        textBox.textContent = list[i];
+        textBox.for = "listItem" + i;
+        checkBox.name = "listItem" + i;
+
+        // append newly created clone to the bottom
         listDiv.appendChild(clone);
     }
 }
