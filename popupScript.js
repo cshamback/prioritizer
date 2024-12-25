@@ -9,7 +9,9 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log("Clicked the button.");
         chrome.windows.create({
             url: chrome.runtime.getURL("window.html"),
-            type: "popup" // no address bar 
+            type: "popup", // no address bar 
+            height: 700,
+            width: 700
         });
     }
 

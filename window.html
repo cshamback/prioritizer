@@ -9,13 +9,11 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Ibarra+Real+Nova:ital,wght@0,400..700;1,400..700&family=Jaldi:wght@400;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <div id="listCreation">
+    <div id="listCreation" class="parentFB">
         <h1>Create a new list.</h1>
         <p>Add as many items as you need to.</p>
 
@@ -29,13 +27,16 @@
         <p>(Don't worry, you can add more later.)</p>
     </div>
 
-    <div id="sorting">
+    <div id="sorting" class="parentFB">
         <h1>For each pair, choose the item that is higher priority.</h1>
-        <button class="sortOption" id="left">Option 1</button>
-        <button class="sortOption" id="right">Option 2</button>
+        <div style="display: flex; justify-content: center; align-items: center; gap: 10px; height: 60vh;">
+            <button class="sortOption" id="left">Option 1</button>
+            <button class="sortOption" id="right">Option 2</button>
+        </div>
+        <p>(You can reorder individual items in the next step, or sort again later. )</p>
     </div>
 
-    <div id="finalList">
+    <div id="finalList" class="parentFB">
         <h1>To-do:</h1>
         <div id="todoList"></div>
     </div>

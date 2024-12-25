@@ -93,10 +93,9 @@ async function doneButton() { // triggers the sort and the results page
 function populateList(list) {
     console.log("populateList triggered! List used: " + list);
 
-    // TODO: REVERSE THE LIST 
     // TODO: SAVE CHECKBOX DATA 
 
-    for (let i = 0; i < list.length; i++) {
+    for (let i = list.length - 1; i >= 0; i--) {
         // get div to append to 
         const listDiv = document.getElementById("todoList");
 
