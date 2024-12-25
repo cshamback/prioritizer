@@ -22,7 +22,7 @@ const itemTemplate = document.createElement("template");
 // checkbox needs a name and label needs a 'for', both must be same value 
 itemTemplate.innerHTML = `
     <div class="listItem" id="textBox">
-    <label> This is a finished to-do list item.</label>
+    <label id="todoLabel"> This is a finished to-do list item.</label>
         <input type="checkbox"> 
     </div>
 `;
@@ -39,7 +39,11 @@ function addItem(inputElement) {
 
     // create a clone of the template, THEN append it (preserves structure)
     const clone = itemTemplate.content.cloneNode(true);
-    clone.firstElementChild.textContent = itemText;
+
+    // set label text -> every to-do list item has a label component with the item's text 
+    const labelElement = clone.querySelector('#todoLabel');
+    labelElement.textContent = itemText;
+
     listDiv.appendChild(clone);
 
     // get text from input, append to items
@@ -88,6 +92,9 @@ async function doneButton() { // triggers the sort and the results page
 
 function populateList(list) {
     console.log("populateList triggered! List used: " + list);
+
+    // TODO: REVERSE THE LIST 
+    // TODO: SAVE CHECKBOX DATA 
 
     for (let i = 0; i < list.length; i++) {
         // get div to append to 
