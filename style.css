@@ -7,12 +7,14 @@
 .quicksand> {
     font-family: "Quicksand", serif;
     font-optical-sizing: auto;
-    font-weight: 300;
+    font-weight: 100;
     font-style: normal;
 }
 
 :is(h1, h2, h3) {
     font-family: "Quicksand", serif;
+    color: rgb(28, 24, 25);
+    margin: 5px;
 }
 
 body {
@@ -24,26 +26,61 @@ body {
 p {
     font-family: "Jaldi", sans-serif;
     font-size: 18px;
+    color: rgb(28, 24, 25);
+    margin: 5px;
 }
 
 h1 {
-    font-size: 48px;
+    font-size: 32px;
+    color: rgb(28, 24, 25);
 }
 
 button {
     background-color: #F3CACA;
+
+    color: rgb(28, 24, 25);
+    font-family: "Jaldi", sans-serif;
+
     border: none;
     border-radius: 10px;
-    font-family: "Jaldi", sans-serif;
-    padding: 5px;
+
+    padding: 5px 15px;
+}
+
+button:hover {
+    background-color: #eea1aa;
 }
 
 input {
-    border: 1px solid black;
-    padding: 5px;
-    width: 90%;
-    margin-bottom: 10px;
-    text-wrap: wrap;
+    color: #F9E4E2;
+    font-family: "Jaldi", sans-serif;
+    font-size: 12pt;
+}
+
+input.text-input::placeholder {
+    color: #ffdbe3;
+    font-family: "Jaldi", sans-serif;
+    font-size: 12pt;
+}
+
+input[type=text] {
+    border: none;
+    border-radius: 10px;
+
+    padding: 10px 5px;
+    width: 97%;
+    margin: 10px;
+
+    background-color: #eea1aa;
+}
+
+input.text-input:focus {
+    border: 2px rgb(28, 24, 25);
+    outline: none;
+}
+
+input[type=checkbox] {
+    outline: none;
 }
 
 .parentFB {
@@ -53,13 +90,12 @@ input {
     margin: 10px;
 }
 
-/* TODO: center the options */
 .sortOption {
     border: none;
     background-color: #F3CACA;
 
     width: 90%;
-    height: 70%;
+    height: 90%;
     margin: 5px;
 
     font-family: "Jaldi", sans-serif;
@@ -73,11 +109,11 @@ input {
     max-width: 100%;
 }
 
-/* TODO: 
-- wrap text
-- add spacing between items 
-*/
 .listItem {
+    font-family: "Jaldi", sans-serif;
+    font-size: 12pt;
+    color: rgb(28, 24, 25);
+
     background-color: #F3CACA;
     border-radius: 10px;
     padding: 10px;

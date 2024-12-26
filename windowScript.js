@@ -9,6 +9,8 @@ let listCreation;
 let sorting;
 let finalList;
 
+document.title = "Prioritizer";
+
 // TEMPLATES ---------
 
 const inputTemplate = document.createElement("template"); // string input must be a type of HTML element ie. template, div, p
@@ -21,9 +23,9 @@ inputTemplate.innerHTML = `
 const itemTemplate = document.createElement("template");
 // checkbox needs a name and label needs a 'for', both must be same value 
 itemTemplate.innerHTML = `
-    <div class="listItem" id="textBox">
-    <label id="todoLabel"> This is a finished to-do list item.</label>
+    <div class="listItem" id="textBox" style="display: flex;">
         <input type="checkbox"> 
+        <label id="todoLabel"> This is a finished to-do list item.</label>
     </div>
 `;
 

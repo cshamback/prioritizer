@@ -1,0 +1,20 @@
+## TODO: 
+### General 
+- save checkbox data from list creation 
+- make checked items "greyed out" 
+- style checkboxes
+- color themes
+- background images
+
+### List creation 
+- make the only scrollable area the list itself
+- remove margin underneath title 
+- make "done" button finish an item, add a "sort ->" button 
+
+### Sorting
+- remove instructions after user makes first selection 
+
+### Finished List
+- add drag and drop functionality 
+- add "add" button (adds a new item to the bottom of the list)
+- add "Sort Again" button (takes you back to the sorting page and calls the sort method again)

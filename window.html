@@ -2,6 +2,7 @@
 
 <head>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="scrollbar.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,7 +16,7 @@
 <body>
     <div id="listCreation" class="parentFB">
         <h1>Create a new list.</h1>
-        <p>Add as many items as you need to.</p>
+        <p>You'll sort it in the next step.</p>
 
         <!-- Contents added at runtime -->
         <div id="todoListContainer"></div> <!-- contains finished items -->
@@ -29,7 +30,7 @@
 
     <div id="sorting" class="parentFB">
         <h1>For each pair, choose the item that is higher priority.</h1>
-        <div style="display: flex; justify-content: center; align-items: center; gap: 10px; height: 60vh;">
+        <div style="display: flex; justify-content: center; align-items: center; height: 50vh; margin: 5px;">
             <button class="sortOption" id="left">Option 1</button>
             <button class="sortOption" id="right">Option 2</button>
         </div>
