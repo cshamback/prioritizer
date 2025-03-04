@@ -5,14 +5,11 @@
 - make it persistent 
 - set up icons
 - add information page from button in popup 
+- make checkboxes only appear in finished list 
 
 ### List creation 
 - make the only scrollable area the list itself
-- remove margin underneath title 
-- make "done" button finish an item, add a "sort ->" button 
-- fix alignment of text inside to-do items
-- fix alignment of finished and new items 
-- make done button align with list
+- make "done" button finish an item, add a "sort ->" button
 - make "don't worry you can add more later" a toast
 
 ### Sorting

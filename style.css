@@ -14,7 +14,7 @@
 :is(h1, h2, h3) {
     font-family: "Quicksand", serif;
     color: rgb(28, 24, 25);
-    margin: 5px;
+    margin: 5px 0px 5px 0px;
 }
 
 body {
@@ -27,7 +27,7 @@ p {
     font-family: "Jaldi", sans-serif;
     font-size: 18px;
     color: rgb(28, 24, 25);
-    margin: 5px;
+    margin: 5px 0px 5px 0px;
 }
 
 h1 {
@@ -67,9 +67,15 @@ input[type=text] {
     border: none;
     border-radius: 10px;
 
-    padding: 10px 5px;
-    width: 97%;
-    margin: 10px;
+    /* for SOME REASON. we have to specify.
+    the width is 100%.*/
+    width: 100%;
+
+    display: flex;
+    position: relative;
+    padding: 3px;
+    margin-bottom: 12px;
+    cursor: pointer;
 
     background-color: #eea1aa;
 }
@@ -116,6 +122,7 @@ input.text-input:focus {
     display: block;
     position: relative;
     margin-bottom: 12px;
+    padding: 3px;
     cursor: pointer;
 
     -webkit-user-select: none;
