@@ -2,14 +2,18 @@
 ### General 
 - save checkbox data from list creation 
 - make checked items "greyed out" 
-- style checkboxes
-- color themes
-- background images
+- make it persistent 
+- set up icons
+- add information page from button in popup 
 
 ### List creation 
 - make the only scrollable area the list itself
 - remove margin underneath title 
 - make "done" button finish an item, add a "sort ->" button 
+- fix alignment of text inside to-do items
+- fix alignment of finished and new items 
+- make done button align with list
+- make "don't worry you can add more later" a toast
 
 ### Sorting
 - remove instructions after user makes first selection 
@@ -18,3 +22,7 @@
 - add drag and drop functionality 
 - add "add" button (adds a new item to the bottom of the list)
 - add "Sort Again" button (takes you back to the sorting page and calls the sort method again)
+
+### Future Add-Ons
+- color themes
+- background images

@@ -21,10 +21,10 @@ inputTemplate.innerHTML = `
 `;
 
 const itemTemplate = document.createElement("template");
-// checkbox needs a name and label needs a 'for', both must be same value 
 itemTemplate.innerHTML = `
     <div class="listItem" id="textBox" style="display: flex;">
-        <input type="checkbox"> 
+        <input type="checkbox">
+        <span class="checkmark"></span> 
         <label id="todoLabel"> This is a finished to-do list item.</label>
     </div>
 `;
@@ -53,6 +53,9 @@ function addItem(inputElement) {
 
     // clear input box 
     inputElement.value = "";
+
+    let checkBox = document.querySelectorAll(".checkmark");
+    console.log("Found checkmarks: ", checkBox);
 }
 
 // called after addItem -> creates a new textbox (InputTemplate) below the finished ones

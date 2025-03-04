@@ -1,0 +1,71 @@
+/* Hide the default checkbox:
+goes on top of the checkmark class but has 0 opacity*/
+.listItem input {
+    position: absolute;
+    z-index: 2;
+
+    top: 50%;
+    margin-top: -7.5px;
+    margin-left: 7.5px;
+
+    height: 15px;
+    width: 15px;
+
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* create a new checkbox: 
+goes underneath the default checkbox*/
+.checkmark {
+    position: absolute;
+    z-index: 1;
+
+    top: 50%;
+    margin-top: -7.5px;
+    margin-left: 7.5px;
+
+    height: 15px;
+    width: 15px;
+
+    border-radius: 5px;
+
+    background-color: #fae8e8;
+}
+
+/* on mouse over */
+.listItem:hover input~.checkmark {
+    background-color: #d9b2b7;
+}
+
+/* when checked */
+.listItem input:checked~.checkmark {
+    background-color: #eea1aa;
+}
+
+/* create checkmark - hidden when not checked */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* show checkmark when checked: changes display from none to block */
+.listItem input:checked~.checkmark:after {
+    display: block;
+}
+
+/* style checkmark */
+.listItem .checkmark:after {
+    left: 4px;
+    top: 0px;
+    width: 5px;
+    height: 10px;
+
+    border: solid white;
+    border-width: 0 3px 3px 0;
+
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}

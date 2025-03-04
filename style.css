@@ -79,10 +79,6 @@ input.text-input:focus {
     outline: none;
 }
 
-input[type=checkbox] {
-    outline: none;
-}
-
 .parentFB {
     display: flex;
     align-items: left;
@@ -116,8 +112,16 @@ input[type=checkbox] {
 
     background-color: #F3CACA;
     border-radius: 10px;
-    padding: 10px;
-    margin: 10px;
+
+    display: block;
+    position: relative;
+    margin-bottom: 12px;
+    cursor: pointer;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .startButtons {
@@ -133,8 +137,6 @@ input[type=checkbox] {
     word-break: break-word;
     display: block;
     max-width: 100%;
-}
 
-/* TODO:
-- style the scrollbar 
-*/
+    padding-left: 35px;
+}
