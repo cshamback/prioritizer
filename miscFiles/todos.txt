@@ -1,25 +1,26 @@
 ## TODO: 
 ### General 
-- save checkbox data from list creation 
+- save checkbox data from list creation OR make checkboxes only appear in finished list 
 - make checked items "greyed out" 
-- make it persistent 
-- set up icons
+- set up icons and logo 
 - add information page from button in popup 
-- make checkboxes only appear in finished list 
+- make text for todo list items editable
 
 ### List creation 
 - make the only scrollable area the list itself
-- make "done" button finish an item, add a "sort ->" button
+- make "done" button finish an item, add a "sort ->" button (with arrow symbol)
 - make "don't worry you can add more later" a toast
 
 ### Sorting
-- remove instructions after user makes first selection 
+- make instructions a toast the user can close 
 
 ### Finished List
-- add drag and drop functionality 
+- add drag and drop functionality to todo list items 
 - add "add" button (adds a new item to the bottom of the list)
 - add "Sort Again" button (takes you back to the sorting page and calls the sort method again)
+- allow deleting items 
 
-### Future Add-Ons
+### Future Add-Ons: 2.0
 - color themes
 - background images
+- make it persistent - let the user have multiple lists and create new ones 

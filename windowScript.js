@@ -29,11 +29,10 @@ itemTemplate.innerHTML = `
     </div>
 `;
 
-// called when the user presses "enter" or otherwise finishes inputting text 
+// called when the user presses "enter" or clicks "done" button
 // adds a FINISHED to-do list item (itemTemplate) to the list 
 function addItem(inputElement) {
     // convert this input to an itemTemplate (finished item)
-
     let itemText = inputElement.value;
 
     // get div to append to 
@@ -75,11 +74,12 @@ function newTextBox() {
             addItem(inputBox);
         }
     });
+
     listDiv.appendChild(clone);
 }
 
 //TODO: add a "re-sort" button that calls this method 
-async function doneButton() { // triggers the sort and the results page 
+async function sortButton() { // triggers the sort and the results page 
     console.log(items);
 
     listCreation.style.display = "none";
@@ -93,6 +93,15 @@ async function doneButton() { // triggers the sort and the results page
     finalList.style.display = "block";
 
     populateList(sortedList);
+}
+
+// create a new list item with the text in the input box
+// also, clear the inout box 
+async function addButton() {
+    inputElement = document.querySelector("#inputBox > input");
+    addItem(inputElement);
+
+    inputElement.value = "";
 }
 
 function populateList(list) {
@@ -143,5 +152,6 @@ window.addEventListener('load', function () {
 document.addEventListener("DOMContentLoaded", () => {
 
     // set all onclick methods 
-    document.getElementById("doneButton").onclick = doneButton;
+    document.getElementById("addButton").onclick = addButton;
+    document.getElementById("sortButton").onclick = sortButton;
 });
