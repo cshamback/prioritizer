@@ -80,13 +80,17 @@ function newTextBox() {
 
 //TODO: add a "re-sort" button that calls this method 
 async function sortButton() { // triggers the sort and the results page 
-    console.log(items);
+    // clear browser cache -- we don't care about keeping previously sorted order
+    clearBrowserCache();
 
+    console.log(`Items: ${items}`);
+
+    // display sorting page
     listCreation.style.display = "none";
     sorting.style.display = "block";
 
     sortedList = await mergeInsertionSort(items);
-    console.log(sortedList);
+    console.log(`Sorted list: ${sortedList}`);
 
     // display the sorted list 
     sorting.style.display = "none";
@@ -107,12 +111,15 @@ async function addButton() {
 function populateList(list) {
     console.log("populateList triggered! List used: " + list);
 
+    // clear all children of listDiv -- otherwise we end up with duplicates when we re-sort
+    const listDiv = document.getElementById("todoList");
+    while (listDiv.firstChild) {
+        listDiv.removeChild(listDiv.firstChild);
+    }
+
     // TODO: SAVE CHECKBOX DATA 
 
     for (let i = list.length - 1; i >= 0; i--) {
-        // get div to append to 
-        const listDiv = document.getElementById("todoList");
-
         // create a clone of the template and set its properties
         const clone = itemTemplate.content.cloneNode(true);
 
@@ -154,4 +161,5 @@ document.addEventListener("DOMContentLoaded", () => {
     // set all onclick methods 
     document.getElementById("addButton").onclick = addButton;
     document.getElementById("sortButton").onclick = sortButton;
+    document.getElementById("resortButton").onclick = sortButton; 
 });

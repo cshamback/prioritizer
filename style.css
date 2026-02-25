@@ -23,11 +23,16 @@ body {
     background-color: #F9E4E2;
 }
 
-p {
+a, p {
     font-family: "Jaldi", sans-serif;
     font-size: 18px;
     color: rgb(28, 24, 25);
     margin: 5px 0px 5px 0px;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
 }
 
 h1 {
@@ -61,6 +66,10 @@ input.text-input::placeholder {
     color: #ffdbe3;
     font-family: "Jaldi", sans-serif;
     font-size: 12pt;
+}
+
+input.text-input:hover {
+    cursor: text; 
 }
 
 input[type=text] {
