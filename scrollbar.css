@@ -5,16 +5,11 @@
 
 /* Track */
 ::-webkit-scrollbar-track {
-    background: #f1f1f1;
+    background: #a1b3ee;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: #dea9af;
+    background: #254475;
     border-radius: 5px;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-    background: #eea1aa;
 }

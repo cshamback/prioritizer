@@ -53,8 +53,11 @@ function addItem(inputElement) {
     // clear input box 
     inputElement.value = "";
 
+    // hide all checkboxes -- we don't want them to be visible until the list is fully sorted and the user can start checking things off
     let checkBox = document.querySelectorAll(".checkmark");
-    console.log("Found checkmarks: ", checkBox);
+    checkBox.forEach(box => {
+        box.style.display = "none";
+    });
 }
 
 // called after addItem -> creates a new textbox (InputTemplate) below the finished ones
@@ -87,6 +90,7 @@ async function sortButton() { // triggers the sort and the results page
 
     // display sorting page
     listCreation.style.display = "none";
+    finalList.style.display = "none";
     sorting.style.display = "block";
 
     sortedList = await mergeInsertionSort(items);

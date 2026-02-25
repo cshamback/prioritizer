@@ -35,12 +35,12 @@ goes underneath the default checkbox*/
 
 /* on mouse over */
 .listItem:hover input~.checkmark {
-    background-color: #d9b2b7;
+    background-color: #b2b8d9;
 }
 
 /* when checked */
 .listItem input:checked~.checkmark {
-    background-color: #eea1aa;
+    background-color: #b2b8d9;
 }
 
 /* create checkmark - hidden when not checked */
@@ -62,7 +62,7 @@ goes underneath the default checkbox*/
     width: 5px;
     height: 10px;
 
-    border: solid white;
+    border: solid #254475;
     border-width: 0 3px 3px 0;
 
     -webkit-transform: rotate(45deg);

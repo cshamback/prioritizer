@@ -20,7 +20,7 @@
 body {
     size: auto;
     border-radius: 25px;
-    background-color: #F9E4E2;
+    background-color: #e2e6f9;
 }
 
 a, p {
@@ -41,9 +41,9 @@ h1 {
 }
 
 button {
-    background-color: #F3CACA;
+    background-color: #254475;
 
-    color: rgb(28, 24, 25);
+    color: #cadaf3;
     font-family: "Jaldi", sans-serif;
 
     border: none;
@@ -53,23 +53,32 @@ button {
 }
 
 button:hover {
-    background-color: #eea1aa;
+    background-color: #a1b3ee;
+    color:#254475;
+    cursor: pointer;
 }
 
 input {
-    color: #F9E4E2;
+    color: #e2eef9;
     font-family: "Jaldi", sans-serif;
     font-size: 12pt;
 }
 
 input.text-input::placeholder {
-    color: #ffdbe3;
+    color: rgb(28, 24, 25);;
     font-family: "Jaldi", sans-serif;
     font-size: 12pt;
 }
 
-input.text-input:hover {
+input.text-input:hover::placeholder {
+    color: #a1b3ee;
+}
+
+input.text-input:hover{
     cursor: text; 
+    background-color: #254475;
+    color:#a1b3ee;
+    border-radius: 10px;
 }
 
 input[type=text] {
@@ -86,7 +95,8 @@ input[type=text] {
     margin-bottom: 12px;
     cursor: pointer;
 
-    background-color: #eea1aa;
+    background-color: #cadaf3;
+    color:rgb(28, 24, 25);
 }
 
 input.text-input:focus {
@@ -103,7 +113,8 @@ input.text-input:focus {
 
 .sortOption {
     border: none;
-    background-color: #F3CACA;
+    background-color: #cadaf3;
+    color:#254475;
 
     width: 90%;
     height: 90%;
@@ -120,12 +131,18 @@ input.text-input:focus {
     max-width: 100%;
 }
 
+.sortOption:hover {
+    background-color: #254475;
+    color:#cadaf3;
+    cursor: pointer;
+}
+
 .listItem {
     font-family: "Jaldi", sans-serif;
     font-size: 12pt;
     color: rgb(28, 24, 25);
 
-    background-color: #F3CACA;
+    background-color: #cadaf3;
     border-radius: 10px;
 
     display: block;
@@ -138,6 +155,11 @@ input.text-input:focus {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+}
+
+.listItem:hover {
+    background-color: #254475;
+    color:#cadaf3;
 }
 
 .startButtons {
